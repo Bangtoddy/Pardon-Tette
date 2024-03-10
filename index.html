@@ -1,30 +1,42 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Te amo</title>
-    
-    <link rel="stylesheet" href="me_perdonas.css">
-    
-    
-    <style>
-        #No {
-    grid-row: 5;
-    grid-column: 6;
-}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Little Rascal</title>
+<style>
+  body {
+    background-image: url('25d1262b838a24c53e65631dbdb8323d.jpg');
+    background-size: cover;
+  }
+</style>
 </head>
-<body>  
-        <div>
-            <p id="p" hidden>Yo tambien te amo</p>
-        <h1 id="1">Me Perdonas</h1>
-        <section>
-        <button id="Si">Si</button>
-        <button id="No">No</button>
-    </section>
-    </div>
-   
-    <script src="me_perdonas.js"></script>
+<body>
+  <h1>Me pardonneras-tu, Dandan?</h1>
+  <button id="Oui">Oui</button>
+  <button id="Non">Non</button>
+
+  <script>
+    let non = document.getElementById("Non");
+
+    non.addEventListener("click", function() {
+      let newColumn, newRow;
+      do {
+        newColumn = Math.floor(Math.random() * 4) + 1; // Generates a random number between 1 and 4 for the new column
+        newRow = Math.floor(Math.random() * 4) + 1; // Generates a random number between 1 and 4 for the new row
+      } while (newColumn === parseInt(Oui.style.gridColumn) && newRow === parseInt(Oui.style.gridRow)); // Ensures that the new values do not overlap with the "Oui" button
+      
+      non.style.gridColumn = newColumn; // Sets the gridColumn property of the non element's style to the value of newColumn
+      non.style.gridRow = newRow; // Sets the gridRow property of the non element's style to the value of newRow
+      
+      non.classList.add('jumping'); // Adds the class to make the button jump
+      setTimeout(function() {
+        non.classList.remove('jumping');
+      }, 500);
+    });
+  </script>
+
 </body>
 </html>
+```
