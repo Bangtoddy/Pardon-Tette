@@ -1,0 +1,19 @@
+```css
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+
+button.oui {
+  background-color: green;
+  border-radius: 10px;
+}
+
+button.non {
+  background-color: red;
+  border-radius: 10px;
+}
+```
